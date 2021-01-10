@@ -5,10 +5,22 @@
 }
 
 <h1>Restaurants</h1>
-
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search" value="" />
+            <div class="input-group-append">
+                <button class="btn btn-light" >
+                    <i class="fa fa-search fa-fw"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
 
 
 <table class="table">
+    <caption>List of Restaurants</caption>
     <thead>
         <tr>
             <th scope="col">Restaurant</th>
@@ -20,11 +32,11 @@
 
         @foreach(var rest in Model.restaurant)
                 {
-                       <tr>
-                         <td>@rest.Name</td>
-                         <td>@rest.Location</td>
-                         <td>@rest.Cuisine</td>
-                     </tr>
+        <tr>
+            <td>@rest.Name</td>
+            <td>@rest.Location</td>
+            <td>@rest.Cuisine</td>
+        </tr>
                 }
 
 
