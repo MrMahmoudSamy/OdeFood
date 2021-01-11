@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using OdeToFood.Core;
 using OdeToFood.Data;
@@ -17,10 +18,13 @@ namespace OdeFood
             _restaurantData = restaurantData;
         }
         public string Message { get; set; }
+
+        [BindProperty(SupportsGet =true)]
+        public string SearchTerm { get; set; }
         public void OnGet()
         {
             Message = _confg["Message"];
-            restaurant = _restaurantData.Getall();
+            restaurant = _restaurantData.GetRetaurantByName(SearchTerm);
         }
     }
 }
