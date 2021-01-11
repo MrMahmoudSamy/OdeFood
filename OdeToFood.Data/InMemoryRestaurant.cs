@@ -14,15 +14,20 @@ namespace OdeToFood.Data
             restaurant = new List<Restaurant>()
             {
                 new Restaurant{Id=1,Name="Pizza Hut",Location="Alexandria",Cuisine=CuisineType.Italian},
-                new Restaurant{Id=1,Name="PastaWesy",Location="Alexandria",Cuisine=CuisineType.Italian},
-                new Restaurant{Id=1,Name="Om Hassan",Location="Cairo",Cuisine=CuisineType.Egyption},
-                new Restaurant{Id=1,Name="Macuen",Location="Alexandria",Cuisine=CuisineType.Mexican}
+                new Restaurant{Id=2,Name="PastaWesy",Location="Alexandria",Cuisine=CuisineType.Italian},
+                new Restaurant{Id=3,Name="Om Hassan",Location="Cairo",Cuisine=CuisineType.Egyption},
+                new Restaurant{Id=4,Name="Macuen",Location="Alexandria",Cuisine=CuisineType.Mexican}
             };
                
         }
         public IEnumerable<Restaurant> Getall()
         {
             return restaurant.OrderBy(r=>r.Name).ToList();
+        }
+
+        public Restaurant GetRestaurantById(int Id)
+        {
+            return restaurant.SingleOrDefault(r => r.Id == Id);
         }
 
         public IEnumerable<Restaurant> GetRetaurantByName(string name=null)

@@ -36,6 +36,12 @@
             <td>@rest.Name</td>
             <td>@rest.Location</td>
             <td>@rest.Cuisine</td>
+            <td>
+                <a class="btn btn-lg" asp-page="./Details"
+                   asp-route-restaurantId="@rest.Id">
+                    <i class="fa fa-folder-open"></i>
+                </a>
+            </td>
         </tr>
                 }
 
