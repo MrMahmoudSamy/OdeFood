@@ -32,8 +32,12 @@ namespace OdeFood
         }
         public IActionResult OnPost()
         {
-            Restaurant = _restaurantData.Update(Restaurant);
-            _restaurantData.Commit();
+            if(ModelState.IsValid)
+            {
+                Restaurant = _restaurantData.Update(Restaurant);
+                _restaurantData.Commit();
+            }
+            Cuisines = _htmlHelper.GetEnumSelectList<CuisineType>();
             return Page();
         }
     }
