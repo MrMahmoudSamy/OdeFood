@@ -53,6 +53,7 @@ namespace OdeFood
             {
                _restaurantData.Add(Restaurant);
             }
+            TempData["Message"] = "Resturant is Saved";
             _restaurantData.Commit();
             return RedirectToPage("./Details", new { restaurantId = Restaurant.Id });
 
