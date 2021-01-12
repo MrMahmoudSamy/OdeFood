@@ -20,6 +20,12 @@ namespace OdeToFood.Data
             };
                
         }
+
+        public int Commit()
+        {
+            return 0;
+        }
+
         public IEnumerable<Restaurant> Getall()
         {
             return restaurant.OrderBy(r=>r.Name).ToList();
@@ -33,6 +39,18 @@ namespace OdeToFood.Data
         public IEnumerable<Restaurant> GetRetaurantByName(string name=null)
         {
             return restaurant.Where(r => string.IsNullOrEmpty(name) || r.Name.StartsWith(name)).OrderBy(r=>r.Name);
+        }
+
+        public Restaurant Update(Restaurant UpdatedRestaurant)
+        {
+            var restaurant=GetRestaurantById(UpdatedRestaurant.Id);
+            if(restaurant!=null)
+            {
+                restaurant.Name = UpdatedRestaurant.Name;
+                restaurant.Location = UpdatedRestaurant.Location;
+                restaurant.Cuisine = UpdatedRestaurant.Cuisine;
+            }
+            return restaurant;
         }
     }
 }
