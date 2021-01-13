@@ -33,6 +33,16 @@ namespace OdeToFood.Data
             return 0;
         }
 
+        public Restaurant Delete(int Id)
+        {
+           var rest= restaurant.SingleOrDefault(r => r.Id == Id);
+            if(restaurant!=null)
+            {
+                restaurant.Remove(rest);
+            }
+          return rest;
+        }
+
         public IEnumerable<Restaurant> Getall()
         {
             return restaurant.OrderBy(r=>r.Name).ToList();
