@@ -16,6 +16,11 @@ a {
   color: #0366d6;
 }
 
+table td {
+    padding: 2px;
+    border-width: 0;
+}
+ 
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;

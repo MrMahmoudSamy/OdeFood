@@ -23,38 +23,44 @@
        
     </div>
 </div>
-<table class="table">
+<table class="table" border="0" cellpadding="0" cellspacing="0">
     <caption>List of Restaurants</caption>
     <thead>
         <tr>
             <th scope="col">Restaurant</th>
             <th scope="col">Location</th>
             <th scope="col">Cuisine</th>
-            <th scope="col" colspan="2">Actions</th>
+            <th scope="col" colspan="3">Actions</th>
         </tr>
     </thead>
     <tbody>
 
         @foreach (var rest in Model.restaurant)
         {
-            <tr>
-                <td>@rest.Name</td>
-                <td>@rest.Location</td>
-                <td>@rest.Cuisine</td>
+        <tr>
+            <td>@rest.Name</td>
+            <td>@rest.Location</td>
+            <td>@rest.Cuisine</td>
 
-                <td>
-                    <a class="btn btn-lg" asp-page="./Details"
-                       asp-route-restaurantId="@rest.Id">
-                        <i class="fa fa-folder-open"></i>
-                    </a>
-                </td>
-                <td>
-                    <a class="btn btn-lg" asp-page="./Edit"
-                       asp-route-restaurantId="@rest.Id">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
+            <td>
+                <a class="btn btn-md" asp-page="./Details"
+                   asp-route-restaurantId="@rest.Id">
+                    <i class="fa fa-folder-open"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-md" asp-page="./Edit"
+                   asp-route-restaurantId="@rest.Id">
+                    <i class="fa fa-edit"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-md" asp-page="./Delete"
+                   asp-route-restaurantId="@rest.Id">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
         }
 
 
