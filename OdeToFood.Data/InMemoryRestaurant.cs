@@ -48,6 +48,11 @@ namespace OdeToFood.Data
             return restaurant.OrderBy(r=>r.Name).ToList();
         }
 
+        public int GetCountOfRestaurant()
+        {
+            return restaurant.Count();
+        }
+
         public Restaurant GetRestaurantById(int Id)
         {
             return restaurant.SingleOrDefault(r => r.Id == Id);
