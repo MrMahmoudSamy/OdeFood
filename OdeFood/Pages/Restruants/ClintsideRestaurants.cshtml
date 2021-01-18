@@ -1,0 +1,19 @@
+﻿@page
+@model OdeFood.ClintsideRestaurantsModel
+@{
+    ViewData["Title"] = "ClintsideRestaurants";
+}
+
+<h1>ClintsideRestaurants</h1>
+
+@section  Scripts{
+    <script>
+        $(function () {
+            $.ajax("/api/restaurants/",
+                { method: "get" }).then(function (response) {
+                    console.dir(response);
+                });
+        });
+    </script>
+
+}

@@ -31,6 +31,7 @@ namespace OdeFood
             });
             services.AddScoped<IRestaurantData, SqlRestaurantDate>();
             services.AddRazorPages();
+            services.AddControllers();
            
         }
 
@@ -58,6 +59,7 @@ namespace OdeFood
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
         }
     }
